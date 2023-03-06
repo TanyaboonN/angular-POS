@@ -1,0 +1,29 @@
+<!-- <div class="circle"></div>
+<br>
+<br>
+<h1 class="text-center"> Hello Welcome !! </h1>
+<br> -->
+
+
+<div class="mb-4">
+    <div class="justify-content-center">
+        <div class="circle mx-auto"></div>
+        <br>
+        <br>
+        <h1 class="text-center"> Hello Welcome !! </h1>
+        <br>
+        <div class="form-outline mb-4 mx-auto " style="width: 22rem">
+            <input type="text" class="form-control" placeholder="Enter a password!" [(ngModel)]= "employeeIdGlobal">
+            <div class="invalid-feedback" style="text-decoration-color: red;">Something wrong!!.Please try again.</div>
+
+        </div>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-block btn-success mb-4"
+                (click)="logIn('1234')">Sign in</button>
+
+            <!-- <a routerLink="/Service/Sign_in"><button class="btn btn-success pull-right"> Add Customer</button></a> -->
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<nav class="navbar navbar-light bg-light topNav">
+    <div class="container-fluid">
+        <a class="navbar-brand">Navbar</a>
+        <form class="d-flex">
+            {{currentTime | date:'dd/MM/yy hh:mm:ss'}}
+        </form>
+    </div>
+</nav>
+
+<!-- <div class="container-fluid"> -->
+<div class="row">
+
+    <div class="col-sm-1 p-0">
+        <nav class="navbar navColor">
+            <div class="container p-0">
+
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item text-center ">
+                        <div class=" col-8 mx-3">
+                            <img src="../../assets/nav-pic/home-circle.svg" alt="Home picture">
+                        </div>
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <div class="col-8 mx-3">
+                            <img src="../../assets/nav-pic/chart-line.svg" class="img-fluid" alt="Chart picture">
+                        </div>
+                        <a class="nav-link" href="#">Chart</a>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <div class="col-8 mx-3">
+                            <img src="../../assets/nav-pic/warehouse.svg" class="img-fluid" alt="Stock picture">
+                        </div>
+                        <a class="nav-link" href="#">Stock</a>
+                    </li>
+
+                    <li class="nav-item  text-center">
+                        <div class="col-8 mx-3">
+                            <img src="../../assets/nav-pic/bell-ring.svg" class="img-fluid" alt="Noti picture">
+                        </div>
+                        <a class="nav-link" href="#">Notification</a>
+                    </li>
+
+                    <li class="nav-item  text-center">
+                        <div class="col-8 mx-3">
+                            <img src="../../assets/nav-pic/cog.svg" class="img-fluid" alt="Setting picture">
+                        </div>
+                        <a class="nav-link" href="#">Setting</a>
+                    </li>
+
+                    <li class="nav-item  text-center">
+                        <div (click)="openPopup()" class="col-8 mx-3">
+                            <a class="nav-link"><img src="../../assets/nav-pic/logout.svg" class="img-fluid"
+                                    alt="logout picture"></a>
+
+                            <a class="nav-link">Log out</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+</div>
+
+
+<!-- Modal Pop up -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+<!-- <div class="modal fade"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngStyle]="{'display':displayStyle}"> -->
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1>Are you sure to Logout?</h1>
+            </div>
+            <div class="modal-footer">
+                <button type="button mx-auto" class="btn btn-success col-3" (click)="backToLoginPage()">
+                    Yes
+                </button>
+                <button type="button" class="btn btn-danger col-3" (click)="closePopup()">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- </div> -->
+
+
+
