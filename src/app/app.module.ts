@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from '../view/login-page/login-page.component';
 import { HomePageComponent } from '../view/home-page/home-page.component';
 import { NavbarComponent } from '../view/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { PopUpComponent } from '../view/pop-up/pop-up.component';
 
 
@@ -21,7 +22,8 @@ import { NavbarComponent } from '../view/navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-     FormsModule 
+     FormsModule,
+     BrowserAnimationsModule 
 
   ],
   providers: [],
