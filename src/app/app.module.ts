@@ -8,6 +8,10 @@ import { LoginPageComponent } from '../view/login-page/login-page.component';
 import { HomePageComponent } from '../view/home-page/home-page.component';
 import { NavbarComponent } from '../view/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 // import { PopUpComponent } from '../view/pop-up/pop-up.component';
 
 
@@ -23,8 +27,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
      FormsModule,
-     BrowserAnimationsModule 
-
+     BrowserAnimationsModule,
+     MatSidenavModule,
+     MatListModule,
+     MatIconModule,
+     MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,93 +1,85 @@
-<nav class="navbar navbar-light bg-light topNav">
-    <div class="container-fluid">
-        <a class="navbar-brand">Navbar</a>
-        <form class="d-flex">
-            {{currentTime | date:'dd/MM/yy hh:mm:ss'}}
-        </form>
+<mat-toolbar class="nav-height" color="warn">
+    <button mat-icon-button (click)="snav.toggle()" class="bg-transparent border-0">
+        <mat-icon class="mt-2">menu</mat-icon>
+    </button>
+    <h1 class="m-0">Jacky Store</h1>
+
+    <div class="ms-auto">
+        {{currentTime | date:'dd/MM/yy hh:mm:ss'}}
     </div>
-</nav>
+</mat-toolbar>
 
-<!-- <div class="container-fluid"> -->
-<div class="row">
+<mat-sidenav-container>
 
-    <div class="col-sm-1 p-0">
-        <nav class="navbar navColor">
-            <div class="container p-0">
+    <mat-sidenav #snav mode="side">
+        <mat-nav-list>
+            <a class="h-100 text-center" mat-list-item routerLink="/home-page">
+                <div class="col-12">
+                    <img src="../../assets/nav-pic/home-circle.svg" alt="Home picture">
+                    <br />
+                    <p class="text-nav-mini">Home</p>
+                </div>
+            </a>
+            <a class="h-100 text-center" mat-list-item routerLink="/login-page">
+                <div class="col-12">
+                    <img src="../../assets/nav-pic/chart-line.svg" alt="Stock picture">
+                    <br />
+                    <p class="text-nav-mini">Chart</p>
+                </div>
+            </a>
+            <a class="h-100 text-center" mat-list-item routerLink="/login-page">
+                <div class="col-12">
+                    <img src="../../assets/nav-pic/warehouse.svg" alt="Stock picture">
+                    <br />
+                    <p class="text-nav-mini">Stock</p>
+                </div>
+            </a>
+            <a class="h-100 text-center" mat-list-item routerLink="/login-page">
+                <div class="col-12">
+                    <img src="../../assets/nav-pic/bell-ring.svg" alt="Stock picture">
+                    <br />
+                    <p class="text-nav-mini">Notification</p>
+                </div>
+            </a>
+            <a class="h-100 text-center" mat-list-item routerLink="/login-page">
+                <div class="col-12">
+                    <img src="../../assets/nav-pic/warehouse.svg" alt="Stock picture">
+                    <br />
+                    <p class="text-nav-mini">Setting</p>
+                </div>
+            </a>
+            <a class="h-100 text-center" mat-list-item (click)="openPopup()">
+                <div class="col-12">
+                    <img src="../../assets/nav-pic/logout.svg" alt="Stock picture">
+                    <br />
+                    <p class="text-nav-mini">Log out</p>
+                </div>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
 
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item text-center ">
-                        <div class=" col-8 mx-3">
-                            <img src="../../assets/nav-pic/home-circle.svg" alt="Home picture">
-                        </div>
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-
-                    <li class="nav-item text-center">
-                        <div class="col-8 mx-3">
-                            <img src="../../assets/nav-pic/chart-line.svg" class="img-fluid" alt="Chart picture">
-                        </div>
-                        <a class="nav-link" href="#">Chart</a>
-                    </li>
-
-                    <li class="nav-item text-center">
-                        <div class="col-8 mx-3">
-                            <img src="../../assets/nav-pic/warehouse.svg" class="img-fluid" alt="Stock picture">
-                        </div>
-                        <a class="nav-link" href="#">Stock</a>
-                    </li>
-
-                    <li class="nav-item  text-center">
-                        <div class="col-8 mx-3">
-                            <img src="../../assets/nav-pic/bell-ring.svg" class="img-fluid" alt="Noti picture">
-                        </div>
-                        <a class="nav-link" href="#">Notification</a>
-                    </li>
-
-                    <li class="nav-item  text-center">
-                        <div class="col-8 mx-3">
-                            <img src="../../assets/nav-pic/cog.svg" class="img-fluid" alt="Setting picture">
-                        </div>
-                        <a class="nav-link" href="#">Setting</a>
-                    </li>
-
-                    <li class="nav-item  text-center">
-                        <div (click)="openPopup()" class="col-8 mx-3">
-                            <a class="nav-link"><img src="../../assets/nav-pic/logout.svg" class="img-fluid"
-                                    alt="logout picture"></a>
-
-                            <a class="nav-link">Log out</a>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-        </nav>
-
-    </div>
-</div>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 
 
 <!-- Modal Pop up -->
 <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
-<!-- <div class="modal fade"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngStyle]="{'display':displayStyle}"> -->
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1>Are you sure to Logout?</h1>
-            </div>
-            <div class="modal-footer">
-                <button type="button mx-auto" class="btn btn-success col-3" (click)="backToLoginPage()">
-                    Yes
-                </button>
-                <button type="button" class="btn btn-danger col-3" (click)="closePopup()">
-                    No
-                </button>
+    <!-- <div class="modal fade"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngStyle]="{'display':displayStyle}"> -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Are you sure to Logout?</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button mx-auto" class="btn btn-success col-3" (click)="backToLoginPage()">
+                        Yes
+                    </button>
+                    <button type="button" class="btn btn-danger col-3" (click)="closePopup()">
+                        No
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- </div> -->
-
-
-

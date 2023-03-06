@@ -1,15 +1,20 @@
-/* You can add global styles to this file, and also import other style files
-html,body {
-    height: 100% !important;
-    min-width: 1000px;
-    width: auto !important;
-
+/* You can add global styles to this file, and also import other style files */
+.mat-drawer-inner-container {
+    overflow-y: hidden !important;
 }
 
-app-root,app-navbar {
-    height: 100% !important;
-    display: block;
-} */
+.text-nav-mini{
+    font-size: 10px;
+}
+
+.nav-height {
+    height: 50px;
+}
+
+.min-height-main {
+    /* 50px in for top nav bar */
+    min-height: calc(100vh - 50px) ;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

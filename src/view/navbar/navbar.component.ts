@@ -1,35 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  currentTime : number = Date.now()
-  id :  NodeJS.Timer | undefined
+
+  constructor(private router: Router) {}
+
+  currentTime: number = Date.now()
+  id: NodeJS.Timer | undefined
+  displayStyle = "none";
 
   ngOnInit() {
     this.id = setInterval(() => {
       this.currentTime = Date.now()
-      console.log('this is current time!!!', this.currentTime)
+      // console.log('this is current time!!!', this.currentTime)
     }, 1000);
   }
-  
+
   ngOnDestroy() {
     if (this.id) {
       clearInterval(this.id);
     }
   }
 
-  constructor(private router: Router) {
-
+  backToLoginPage() {
+    this.router.navigateByUrl('/login-page');
+    this.displayStyle = "none";
   }
-  displayStyle = "none";
-  
+
   openPopup() {
     this.displayStyle = "block";
   }
@@ -37,8 +39,4 @@ export class NavbarComponent implements OnInit {
     this.displayStyle = "none";
   }
 
-  backToLoginPage (){
-    this.router.navigateByUrl('/login-page');
-    
-    }
 }
