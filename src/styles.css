@@ -2,18 +2,22 @@
 .mat-drawer-inner-container {
     overflow-y: hidden !important;
 }
+/* อะไรที่เกิน */
 
 .text-nav-mini{
     font-size: 10px;
 }
+/* ความใหญ่ของ side-nav */
 
 .nav-height {
     height: 50px;
 }
+/* ความใหญ่ของ toolbar */
 
 .min-height-main {
     /* 50px in for top nav bar */
-    min-height: calc(100vh - 50px) ;
+    /* min-height: calc(100vh - 50px) ; */
+    /* calc() คำนวนณ css vh : ขนาดหน้าจอ ลบ ด้วย ความสูง toolbar */
 }
 
 html, body { height: 100%; }

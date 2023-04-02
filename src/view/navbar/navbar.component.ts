@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
       this.currentTime = Date.now()
       // console.log('this is current time!!!', this.currentTime)
     }, 1000);
+    
   }
 
   ngOnDestroy() {
